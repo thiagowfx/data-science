@@ -22,7 +22,7 @@ def read_dataset():
          
     return book_deaths
     
-def plot_graph_bar(book_deaths):
+def plot_graph_bar(book_deaths, imgfile):
     y_pos = np.arange(len(book_deaths))
     
     plt.bar(y_pos, book_deaths, align = 'center', alpha = 0.5)
@@ -31,7 +31,7 @@ def plot_graph_bar(book_deaths):
     plt.ylabel('Deaths')
     plt.title('Deaths by Book')
     
-    plt.savefig('book_deaths.png')
+    plt.savefig(imgfile)
 
 if __name__ == '__main__':
-    plot_graph_bar(read_dataset())
+    plot_graph_bar(read_dataset(), 'book_deaths.png')
